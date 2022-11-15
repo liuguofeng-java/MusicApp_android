@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<io.music.app.view.ShadowRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toast_root"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_toast_bg"
+    android:gravity="center"
+    bind:shadow_blur="14dp"
+    bind:shadow_dx="4dp"
+    bind:shadow_dy="4dp"
+    bind:shadow_color="@color/color_shadow"
+    bind:shadow_radius="50dp">
+
+    <TextView
+        android:id="@+id/toast_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingTop="3dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="3dp"
+        android:text="message"
+        android:textColor="@color/color_default_text"
+        android:textSize="15sp" />
+
+</io.music.app.view.ShadowRelativeLayout>

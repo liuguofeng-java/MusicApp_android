@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashActivity"
+    android:background="@drawable/layer_splash">
+
+    <TextView
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="40dp"
+        android:textSize="23sp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/qing_niao"
+        android:text="网易云音乐·音樂的力量"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </TextView>
+    
+    <LinearLayout
+        android:gravity="center"
+        android:layout_marginBottom="17dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:background="@color/color_gray_text"
+            android:layout_width="50dp"
+            android:layout_height="0.4dp"/>
+        <TextView
+            android:text="网易云音乐支持IPv6网络"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/color_gray_text"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <View
+            android:background="@color/color_gray_text"
+            android:layout_width="50dp"
+            android:layout_height="0.4dp"/>
+    </LinearLayout>
+
+
+</RelativeLayout>
