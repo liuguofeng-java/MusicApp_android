@@ -3,12 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable-v23/layer_splash.xml" value="0.1705" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1705" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable-xxhdpi/profile.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/layer_splash.xml" value="0.1705" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/right_arrow.xml" value="0.1705" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/scan_qr_code.xml" value="0.1705" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/shape_nav_vip_but_bg.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/shape_toast_bg.xml" value="0.7333333333333334" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_nav_profile.xml" value="0.1705" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vip_bg.xml" value="0.1705" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vip_but_bg.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/layout-v28/toast_layout.xml" value="0.3541666666666667" />
-        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/layout/activity_main.xml" value="0.35520833333333335" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/layout/activity_splash.xml" value="0.1" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/layout/fragment_main_menu_left.xml" value="0.35520833333333335" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/layout/left_navigation_menu.xml" value="0.22" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/layout/toast_layout.xml" value="0.3541666666666667" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1705" />

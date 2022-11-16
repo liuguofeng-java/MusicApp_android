@@ -5,11 +5,9 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * Created by Jaeger on 16/6/8.
- *
- * Email: chjie.jaeger@gmail.com
- * GitHub: https://github.com/laobie
- */
+ * @author liuguofeng
+ * @date 2022/11/14 20:06
+ **/
 public class StatusBarView extends View {
     public StatusBarView(Context context, AttributeSet attrs) {
         super(context, attrs);

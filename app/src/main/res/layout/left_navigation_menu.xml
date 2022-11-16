@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp">
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/vector_nav_profile" />
+
+        <TextView
+            android:id="@+id/login_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/profile"
+            android:text="@string/login_name"
+            android:textColor="@color/color_default_text"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@+id/login_text"
+            android:background="@drawable/vector_nav_right_arrow" />
+
+        <View
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/vector_nav_scan_qr_code" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:padding="15dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_nav_vip_bg"
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+        <TextView
+            android:text="@string/vip_name"
+            android:textSize="16sp"
+            android:textColor="#f8dbdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginTop="28dp"
+            android:textSize="12sp"
+            android:textColor="#958a88"
+            android:text="@string/sub_vip_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <View
+            android:background="#958a88"
+            android:layout_width="wrap_content"
+            android:layout_height="0.3dp"
+            android:layout_marginTop="60dp"/>
+        <TextView
+            android:layout_marginTop="70dp"
+            android:textSize="12sp"
+            android:textColor="#958a88"
+            android:text="@string/vip_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:textSize="10sp"
+            android:textColor="#f8dbdd"
+            android:text="会员中心"
+            android:background="@drawable/shape_nav_vip_but_bg"
+            android:layout_alignParentEnd="true"
+            android:layout_width="60dp"
+            android:layout_height="25dp"/>
+    </RelativeLayout>
+</LinearLayout>

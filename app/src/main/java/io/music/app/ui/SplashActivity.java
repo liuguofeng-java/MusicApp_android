@@ -1,7 +1,6 @@
-package io.music.app;
+package io.music.app.ui;
 
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Build;
@@ -9,13 +8,17 @@ import android.os.Bundle;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+import io.music.app.MainActivity;
+import io.music.app.R;
+import io.music.app.base.BaseActivity;
 import io.music.app.util.StatusBarUtil;
 
 /**
  * @author liuguofeng
  * @date 2022-11-14
  */
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends BaseActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.P)
     @Override
@@ -29,6 +32,10 @@ public class SplashActivity extends AppCompatActivity {
         //设置状态栏颜色
         StatusBarUtil.setTransparent(this);
 
+    }
+
+    @Override
+    protected void initData() {
         //3s跳转到主页
         TimerTask task = new TimerTask() {
             @Override

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">网易云(假)</string>
+    <string name="login_name">立即登录</string>
+    <string name="vip_name">开通黑胶VIP</string>
+    <string name="sub_vip_name"><![CDATA[立享超21项专属特权>]]></string>
+    <string name="vip_content">SVIP权益升级!6折尊享千元特权!</string>
 </resources>

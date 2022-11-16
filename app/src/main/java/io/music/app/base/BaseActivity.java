@@ -1,28 +1,54 @@
 package io.music.app.base;
 
-import android.app.Activity;
-import android.os.Build;
 import android.os.Bundle;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import io.music.app.util.StatusBarUtil;
+import io.music.app.util.ToastUtil;
 
 /**
  * @author liuguofeng
  * @date 2022/11/15 10:03
  **/
 public abstract class BaseActivity extends AppCompatActivity {
-    @RequiresApi(api = Build.VERSION_CODES.P)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //隐藏状态栏
+        StatusBarUtil.setStatusBarColor(this);
+
+        initData();
     }
 
+    /**
+     * 初始化数据
+     */
+    protected abstract void initData();
 
-    //给子类提供一个获取activity对象的方式
-    public Activity getActivity() {
-        return this;
+    /**
+     * 在顶部弹窗Toast
+     * @param message Toast 内容
+     */
+    protected void showToastTop(String message){
+        ToastUtil.showToastTop(this, message);
     }
+
+    /**
+     * 在中心弹窗Toast
+     * @param message Toast 内容
+     */
+    protected void showToastCenter(String message){
+        ToastUtil.showToastCenter(this, message);
+    }
+
+    /**
+     * 在底部弹窗Toast
+     * @param message Toast 内容
+     */
+    protected void showToastBottom(String message){
+        ToastUtil.showToastBottom(this, message);
+    }
+
 }

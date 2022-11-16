@@ -5,15 +5,19 @@ import android.app.Activity;
 import android.app.TabActivity;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.os.Build;
+import android.view.DisplayCutout;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.RequiresApi;
+import androidx.core.view.DisplayCutoutCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 /**
@@ -27,10 +31,11 @@ public class StatusBarUtil {
 
     /**
      * 设置全屏自动收起任务栏和状态栏
+     *
      * @param activity
      */
     @RequiresApi(api = Build.VERSION_CODES.P)
-    public static void setPackUpStatusBar(Activity activity){
+    public static void setPackUpStatusBar(Activity activity) {
         Window window = activity.getWindow();
         int uiFlags = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
@@ -44,24 +49,28 @@ public class StatusBarUtil {
             uiFlags |= View.SYSTEM_UI_FLAG_LOW_PROFILE;
         }
         //但是在部分手机上会出现一个坑爹的现象：虽然状态栏隐藏了，但是原状态栏位置上会被黑条占领。（没错，就是在万恶的小米手机上出现了…）
-        window.getDecorView().setSystemUiVisibility(uiFlags);
-        WindowManager.LayoutParams lp = window.getAttributes();
-        lp.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
-        window.setAttributes(lp);
+        //android p 刘海屏适配
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {//加版本判断，28以下会报错
+            window.getDecorView().setSystemUiVisibility(uiFlags);
+            WindowManager.LayoutParams lp = window.getAttributes();
+            lp.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
+            window.setAttributes(lp);
+        }
     }
 
     /**
      * 隐藏状态栏控件
+     *
      * @param activity 需要设置的 activity
      */
-    public static void setStatusBarColor(Activity activity){
+    public static void setStatusBarColor(Activity activity) {
         Window window = activity.getWindow();
         // 5.0以上
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             View decorView = window.getDecorView();
             decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
             window.setStatusBarColor(Color.TRANSPARENT);
-        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }
     }
@@ -424,7 +433,7 @@ public class StatusBarUtil {
             activity.getWindow()
                     .getDecorView()
                     .setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-            if (activity instanceof TabActivity){
+            if (activity instanceof TabActivity) {
                 activity.getWindow()//兼容TabActivity
                         .setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             }
