@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="40dp"
+    android:layout_marginRight="20dp"
+    android:duplicateParentState="true"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/vector_nav_profile" />
+
+        <TextView
+            android:id="@+id/login_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/profile"
+            android:text="@string/login_name"
+            android:textColor="@color/color_default_text"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_centerInParent="true"
+            android:layout_toEndOf="@+id/login_text"
+            android:background="@drawable/vector_right_arrow" />
+
+        <View
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/vector_scan_qr_code" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--开通会员-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/shape_nav_vip_bg"
+                android:padding="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/vip_name"
+                    android:textColor="#f8dbdd"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:text="@string/sub_vip_name"
+                    android:textColor="#958a88"
+                    android:textSize="12sp" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="0.3dp"
+                    android:layout_marginTop="60dp"
+                    android:background="#958a88" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="70dp"
+                    android:text="@string/vip_content"
+                    android:textColor="#958a88"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:layout_width="60dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/shape_nav_vip_but_bg"
+                    android:text="@string/vip_but_text"
+                    android:textColor="#f8dbdd"
+                    android:textSize="11sp" />
+            </RelativeLayout>
+
+            <!--消息、云贝-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_menu_bg"
+                android:orientation="vertical">
+
+                <io.music.app.view.NavMenuLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu_icon="@drawable/vector_email"
+                    app:menu_name="我的消息" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/color_menu_line_bg" />
+
+                <io.music.app.view.NavMenuLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu_icon="@drawable/vector_cloud"
+                    app:menu_name="元贝中心" />
+            </LinearLayout>
+
+            <!--音乐服务-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_menu_bg"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="音乐服务" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/color_menu_line_bg" />
+
+                <io.music.app.view.NavMenuLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu_icon="@drawable/vector_headset"
+                    app:menu_name="云村有票" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/color_menu_line_bg" />
+
+                <io.music.app.view.NavMenuLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu_icon="@drawable/vector_share"
+                    app:menu_name="多多西西空袋" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/color_menu_line_bg" />
+
+                <io.music.app.view.NavMenuLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu_icon="@drawable/vector_mall"
+                    app:menu_name="商场" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/color_menu_line_bg" />
+
+                <io.music.app.view.NavMenuLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu_icon="@drawable/vector_beat"
+                    app:menu_name="Beat专区" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/color_menu_line_bg" />
+
+                <io.music.app.view.NavMenuLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu_icon="@drawable/vector_bang"
+                    app:menu_name="空袋彩铃" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/color_menu_line_bg" />
+
+                <io.music.app.view.NavMenuLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu_icon="@drawable/vector_game"
+                    app:menu_name="游戏专区" />
+            </LinearLayout>
+
+            <!--其他-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_menu_bg"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="其他" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/color_menu_line_bg" />
+
+                <io.music.app.view.NavMenuLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu_icon="@drawable/vector_setting"
+                    app:menu_name="设置" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/color_menu_line_bg" />
+
+                <io.music.app.view.NavMenuLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu_icon="@drawable/vector_moon"
+                    app:menu_name="深色模式" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/color_menu_line_bg" />
+
+                <io.music.app.view.NavMenuLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu_icon="@drawable/vector_timing"
+                    app:menu_name="定时关闭" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/color_menu_line_bg" />
+
+                <io.music.app.view.NavMenuLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu_icon="@drawable/vector_theme"
+                    app:menu_name="个性装扮" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/color_menu_line_bg" />
+
+                <io.music.app.view.NavMenuLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu_icon="@drawable/vector_download"
+                    app:menu_name="边听边存" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/color_menu_line_bg" />
+
+                <io.music.app.view.NavMenuLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu_icon="@drawable/vector_radio"
+                    app:menu_name="在线听歌免流量" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/color_menu_line_bg" />
+
+                <io.music.app.view.NavMenuLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu_icon="@drawable/vector_safety"
+                    app:menu_name="音乐响钟" />
+            </LinearLayout>
+
+            <!--订单、优惠券-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_menu_bg"
+                android:orientation="vertical">
+
+                <io.music.app.view.NavMenuLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu_icon="@drawable/vector_order"
+                    app:menu_name="我的订单" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/color_menu_line_bg" />
+
+                <io.music.app.view.NavMenuLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu_icon="@drawable/vector_coupon"
+                    app:menu_name="优惠券" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/color_menu_line_bg" />
+
+                <io.music.app.view.NavMenuLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu_icon="@drawable/vector_service"
+                    app:menu_name="我的客服" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/color_menu_line_bg" />
+
+                <io.music.app.view.NavMenuLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu_icon="@drawable/vector_share"
+                    app:menu_name="分享网易云音乐" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/color_menu_line_bg" />
+
+                <io.music.app.view.NavMenuLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:menu_icon="@drawable/vector_bang"
+                    app:menu_name="关于" />
+            </LinearLayout>
+
+            <!--退出按钮-->
+            <Button
+
+                android:textColor="@color/color_close_text"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ripple_bg"
+                android:text="@string/nav_close_but" />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

@@ -4,4 +4,6 @@
     <string name="vip_name">开通黑胶VIP</string>
     <string name="sub_vip_name"><![CDATA[立享超21项专属特权>]]></string>
     <string name="vip_content">SVIP权益升级!6折尊享千元特权!</string>
+    <string name="vip_but_text">会员中心</string>
+    <string name="nav_close_but">退出登录/关闭</string>
 </resources>

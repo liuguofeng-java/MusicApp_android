@@ -6,29 +6,20 @@
     android:layout_height="match_parent"
     tools:openDrawer="start">
 
-    <!--侧边导航菜单-->
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
+    <!-- 界面主要内容布局区 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
+    <!-- 左侧弹出的内容 -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true">
+        android:background="@color/color_nav_bg"
+        android:orientation="vertical">
+        <include layout="@layout/left_nav_layout" />
+    </LinearLayout>
 
-        <include layout="@layout/left_navigation_menu" />
-    </com.google.android.material.navigation.NavigationView>
-
-    <!--内容-->
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="xxx">
-
-        </TextView>
-
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

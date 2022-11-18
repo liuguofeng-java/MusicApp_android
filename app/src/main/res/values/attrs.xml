@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--阴影-->
     <declare-styleable name="ShadowRelativeLayout">
         <attr format="color" name="shadow_color"/>
         <attr format="dimension" name="shadow_radius"/>
         <attr format="dimension" name="shadow_blur"/>
         <attr format="dimension" name="shadow_dx"/>
         <attr format="dimension" name="shadow_dy"/>
+    </declare-styleable>
+
+    <!--侧边栏导航中菜单-->
+    <declare-styleable name="NavMenuLinearLayout">
+        <attr format="reference" name="menu_icon"/>
+        <attr format="string" name="menu_name"/>
+        <attr format="string" name="menu_sub_name"/>
+        <attr format="integer" name="menu_msg_num"/>
     </declare-styleable>
 
 </resources>
