@@ -1,4 +1,4 @@
-package io.music.app.ui;
+package io.music.app.ui.activity;
 
 import androidx.annotation.RequiresApi;
 
@@ -9,12 +9,12 @@ import android.os.Bundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import io.music.app.MainActivity;
 import io.music.app.R;
 import io.music.app.base.BaseActivity;
 import io.music.app.util.StatusBarUtil;
 
 /**
+ * 启动页
  * @author liuguofeng
  * @date 2022-11-14
  */

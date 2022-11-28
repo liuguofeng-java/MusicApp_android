@@ -9,7 +9,6 @@
     android:duplicateParentState="true"
     android:orientation="vertical">
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -395,14 +394,14 @@
             <!--退出按钮-->
             <Button
 
-                android:textColor="@color/color_close_text"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/ripple_bg"
-                android:text="@string/nav_close_but" />
+                android:text="@string/nav_close_but"
+                android:textColor="@color/color_close_text" />
         </LinearLayout>
 
     </ScrollView>
