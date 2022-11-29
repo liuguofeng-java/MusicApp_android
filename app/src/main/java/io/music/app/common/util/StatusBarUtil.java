@@ -1,23 +1,19 @@
-package io.music.app.util;
+package io.music.app.common.util;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.TabActivity;
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.Rect;
 import android.os.Build;
-import android.view.DisplayCutout;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowInsets;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.RequiresApi;
-import androidx.core.view.DisplayCutoutCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 /**

@@ -1,4 +1,4 @@
-package io.music.app.util;
+package io.music.app.common.util;
 
 import android.content.Context;
 import android.util.AttributeSet;

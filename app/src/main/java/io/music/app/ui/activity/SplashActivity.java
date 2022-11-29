@@ -11,7 +11,7 @@ import java.util.TimerTask;
 
 import io.music.app.R;
 import io.music.app.base.BaseActivity;
-import io.music.app.util.StatusBarUtil;
+import io.music.app.common.util.StatusBarUtil;
 
 /**
  * 启动页

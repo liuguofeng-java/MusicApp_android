@@ -2,12 +2,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <variable
-            name="viewModel"
-            type="io.music.app.ui.viewmodel.MainViewModel" />
-    </data>
-
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
@@ -16,16 +10,16 @@
 
         <!-- 界面主要内容布局区 -->
         <FrameLayout
-            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp">
 
             <Button
                 android:id="@+id/but"
-                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@{viewModel.model.name}" />
+                android:gravity="center"
+                android:text="按钮" />
         </FrameLayout>
 
         <!-- 左侧弹出的内容 -->
@@ -35,9 +29,9 @@
             android:layout_gravity="start"
             android:background="@color/color_nav_bg"
             android:orientation="vertical">
+
             <include layout="@layout/left_nav_layout" />
         </LinearLayout>
-
 
 
     </androidx.drawerlayout.widget.DrawerLayout>

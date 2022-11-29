@@ -4,8 +4,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import io.music.app.util.StatusBarUtil;
-import io.music.app.util.ToastUtil;
+import io.music.app.common.util.StatusBarUtil;
+import io.music.app.common.util.ToastUtil;
 
 /**
  * @author liuguofeng
@@ -16,6 +16,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         //隐藏状态栏
         StatusBarUtil.setStatusBarColor(this);
 
