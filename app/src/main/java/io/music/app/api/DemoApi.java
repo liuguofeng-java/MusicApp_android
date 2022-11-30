@@ -3,7 +3,6 @@ package io.music.app.api;
 import java.util.Map;
 import io.reactivex.Observable;
 
-import io.music.app.common.network.BaseResult;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 

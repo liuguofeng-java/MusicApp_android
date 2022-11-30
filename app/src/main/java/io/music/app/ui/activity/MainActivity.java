@@ -41,19 +41,19 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initData() {
 
-        HttpServer
-                .applyObservable(demoApi.playlistDetail(1))
-                .safeSubscribe(new BaseObserver<Map<String, Object>>() {
-            @Override
-            public void onSuccess(Map<String, Object> stringObjectMap) {
-
-            }
-
-            @Override
-            public void onFailure(Throwable e) {
-
-            }
-        });
+//        HttpServer
+//                .applyObservable(demoApi.playlistDetail(1))
+//                .safeSubscribe(new BaseObserver<Map<String, Object>>() {
+//            @Override
+//            public void onSuccess(Map<String, Object> stringObjectMap) {
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Throwable e) {
+//
+//            }
+//        });
 
     }
 

@@ -9,7 +9,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SwitchCompat;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import io.music.app.R;
 
 /**
@@ -19,14 +22,24 @@ import io.music.app.R;
  * @date 2022/11/16 16:59
  **/
 public class NavMenuLinearLayout extends LinearLayout {
-    //图标
-    private int menuIcon;
-    //标题
-    private String menuName;
-    //副标题
-    private String menuSubName;
-    //消息提示标志
-    private int menuMsgNum;
+
+    @BindView(R.id.menu_icon)
+    View menuIconView;
+
+    @BindView(R.id.menu_name)
+    TextView menuNameView;
+
+    @BindView(R.id.menu_sub_name)
+    TextView menuSubNameView;
+
+    @BindView(R.id.menu_msg_num)
+    TextView menuMsgNumView;
+
+    @BindView(R.id.right_arrow)
+    View rightArrow;
+
+    @BindView(R.id.menu_switch)
+    SwitchCompat menuSwitchView;
 
     public NavMenuLinearLayout(Context context) {
         super(context);
@@ -47,47 +60,61 @@ public class NavMenuLinearLayout extends LinearLayout {
     private void dealAttrs(Context context, AttributeSet attrs) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.NavMenuLinearLayout);
         if (typedArray != null) {
-            menuIcon = typedArray.getResourceId(R.styleable.NavMenuLinearLayout_menu_icon, 0);
-            menuName = typedArray.getString(R.styleable.NavMenuLinearLayout_menu_name);
-            menuSubName = typedArray.getString(R.styleable.NavMenuLinearLayout_menu_sub_name);
-            menuMsgNum = typedArray.getInt(R.styleable.NavMenuLinearLayout_menu_msg_num, menuMsgNum);
+            //图标
+            int menuIcon = typedArray.getResourceId(R.styleable.NavMenuLinearLayout_menu_icon, 0);
+            //标题
+            String menuName = typedArray.getString(R.styleable.NavMenuLinearLayout_menu_name);
+            //副标题
+            String menuSubName = typedArray.getString(R.styleable.NavMenuLinearLayout_menu_sub_name);
+            //消息提示标志
+            int menuMsgNum = typedArray.getInt(R.styleable.NavMenuLinearLayout_menu_msg_num, 0);
+            //开关按钮
+            int menuSwitch = typedArray.getInt(R.styleable.NavMenuLinearLayout_menu_switch, -1);
+
 
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View view = inflater.inflate(R.layout.menu_linear_layout, this, true);
-            View menuIconView = view.findViewById(R.id.menu_icon);
-            if(menuIcon == 0){
+            ButterKnife.bind(view);
+
+            //图标
+            if (menuIcon == 0) {
                 menuIconView.setVisibility(View.GONE);
-            }else{
+            } else {
                 menuIconView.setBackgroundResource(menuIcon);
             }
 
-            TextView menuNameView = view.findViewById(R.id.menu_name);
-            if(menuName == null){
+            //菜单名称
+            if (menuName == null) {
                 menuNameView.setVisibility(View.GONE);
-            }else{
+            } else {
                 menuNameView.setText(menuName);
             }
 
-            TextView menuSubNameView = view.findViewById(R.id.menu_sub_name);
-            if(menuSubName == null){
+            //副标题
+            if (menuSubName == null) {
                 menuSubNameView.setVisibility(View.GONE);
-            }else{
+            } else {
                 menuSubNameView.setText(menuSubName);
             }
 
-            TextView menuMsgNumView = view.findViewById(R.id.menu_msg_num);
-            if(menuMsgNum == 0){
+            //消息提示标志
+            if (menuMsgNum == 0) {
                 menuMsgNumView.setVisibility(View.GONE);
-            }else{
+            } else {
                 menuMsgNumView.setText(String.valueOf(menuMsgNum));
+            }
+
+            //开关按钮
+            if (menuSwitch == -1) {
+                menuSwitchView.setVisibility(View.GONE);
+            } else {
+                rightArrow.setVisibility(View.GONE);
+                menuSwitchView.setChecked(menuSwitch == 1);
             }
 
             typedArray.recycle();
         }
     }
-
-
-
 
 
 }

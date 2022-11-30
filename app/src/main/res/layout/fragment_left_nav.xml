@@ -13,31 +13,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/profile"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:background="@drawable/vector_nav_profile" />
-
-        <TextView
-            android:id="@+id/login_text"
+        <LinearLayout
+            android:id="@+id/login_but"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginStart="10dp"
-            android:layout_toEndOf="@+id/profile"
-            android:text="@string/login_name"
-            android:textColor="@color/color_default_text"
-            android:textStyle="bold" />
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/profile"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/vector_nav_profile" />
+
+            <TextView
+                android:id="@+id/login_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/login_name"
+                android:textColor="@color/color_default_text"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:background="@drawable/vector_right_arrow" />
+        </LinearLayout>
+
 
         <View
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_centerInParent="true"
-            android:layout_toEndOf="@+id/login_text"
-            android:background="@drawable/vector_right_arrow" />
-
-        <View
+            android:id="@+id/scan_code"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_alignParentEnd="true"
@@ -58,6 +63,7 @@
 
             <!--开通会员-->
             <RelativeLayout
+                android:id="@+id/nav_vip"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:background="@drawable/shape_nav_vip_bg"
@@ -111,6 +117,7 @@
                 android:orientation="vertical">
 
                 <io.music.app.view.NavMenuLinearLayout
+                    android:id="@+id/menu_msg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_email"
@@ -124,10 +131,11 @@
                     android:background="@color/color_menu_line_bg" />
 
                 <io.music.app.view.NavMenuLinearLayout
+                    android:id="@+id/menu_cloud_bei"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_cloud"
-                    app:menu_name="元贝中心" />
+                    app:menu_name="云贝中心" />
             </LinearLayout>
 
             <!--音乐服务-->
@@ -150,6 +158,7 @@
                     android:background="@color/color_menu_line_bg" />
 
                 <io.music.app.view.NavMenuLinearLayout
+                    android:id="@+id/menu_ticket"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_headset"
@@ -163,6 +172,7 @@
                     android:background="@color/color_menu_line_bg" />
 
                 <io.music.app.view.NavMenuLinearLayout
+                    android:id="@+id/menu_empty_sack"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_share"
@@ -176,10 +186,12 @@
                     android:background="@color/color_menu_line_bg" />
 
                 <io.music.app.view.NavMenuLinearLayout
+                    android:id="@+id/menu_mall"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_mall"
-                    app:menu_name="商场" />
+                    app:menu_name="商场"
+                    app:menu_sub_name="耳机9元抢" />
 
                 <View
                     android:layout_width="match_parent"
@@ -189,10 +201,12 @@
                     android:background="@color/color_menu_line_bg" />
 
                 <io.music.app.view.NavMenuLinearLayout
+                    android:id="@+id/menu_beat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_beat"
-                    app:menu_name="Beat专区" />
+                    app:menu_name="Beat专区"
+                    app:menu_sub_name="投票选出最强Beat!" />
 
                 <View
                     android:layout_width="match_parent"
@@ -202,6 +216,7 @@
                     android:background="@color/color_menu_line_bg" />
 
                 <io.music.app.view.NavMenuLinearLayout
+                    android:id="@+id/menu_ringtone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_bang"
@@ -215,10 +230,12 @@
                     android:background="@color/color_menu_line_bg" />
 
                 <io.music.app.view.NavMenuLinearLayout
+                    android:id="@+id/menu_game"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_game"
-                    app:menu_name="游戏专区" />
+                    app:menu_name="游戏专区"
+                    app:menu_sub_name="吸引可爱的肥鹅来健身" />
             </LinearLayout>
 
             <!--其他-->
@@ -241,6 +258,7 @@
                     android:background="@color/color_menu_line_bg" />
 
                 <io.music.app.view.NavMenuLinearLayout
+                    android:id="@+id/menu_setting"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_setting"
@@ -253,11 +271,14 @@
                     android:layout_marginRight="10dp"
                     android:background="@color/color_menu_line_bg" />
 
+
                 <io.music.app.view.NavMenuLinearLayout
+                    android:id="@+id/menu_dark_model"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_moon"
-                    app:menu_name="深色模式" />
+                    app:menu_name="深色模式"
+                    app:menu_switch="1" />
 
                 <View
                     android:layout_width="match_parent"
@@ -267,6 +288,7 @@
                     android:background="@color/color_menu_line_bg" />
 
                 <io.music.app.view.NavMenuLinearLayout
+                    android:id="@+id/menu_timing"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_timing"
@@ -280,6 +302,7 @@
                     android:background="@color/color_menu_line_bg" />
 
                 <io.music.app.view.NavMenuLinearLayout
+                    android:id="@+id/menu_theme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_theme"
@@ -293,6 +316,7 @@
                     android:background="@color/color_menu_line_bg" />
 
                 <io.music.app.view.NavMenuLinearLayout
+                    android:id="@+id/menu_download"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_download"
@@ -306,6 +330,7 @@
                     android:background="@color/color_menu_line_bg" />
 
                 <io.music.app.view.NavMenuLinearLayout
+                    android:id="@+id/menu_free_traffic"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_radio"
@@ -319,6 +344,7 @@
                     android:background="@color/color_menu_line_bg" />
 
                 <io.music.app.view.NavMenuLinearLayout
+                    android:id="@+id/menu_ring_bell"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_safety"
@@ -329,10 +355,12 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/shape_menu_bg"
                 android:orientation="vertical">
 
                 <io.music.app.view.NavMenuLinearLayout
+                    android:id="@+id/menu_order"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_order"
@@ -346,6 +374,7 @@
                     android:background="@color/color_menu_line_bg" />
 
                 <io.music.app.view.NavMenuLinearLayout
+                    android:id="@+id/menu_coupon"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_coupon"
@@ -359,6 +388,7 @@
                     android:background="@color/color_menu_line_bg" />
 
                 <io.music.app.view.NavMenuLinearLayout
+                    android:id="@+id/menu_service"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_service"
@@ -372,6 +402,7 @@
                     android:background="@color/color_menu_line_bg" />
 
                 <io.music.app.view.NavMenuLinearLayout
+                    android:id="@+id/menu_share"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_share"
@@ -385,6 +416,7 @@
                     android:background="@color/color_menu_line_bg" />
 
                 <io.music.app.view.NavMenuLinearLayout
+                    android:id="@+id/menu_bang"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_bang"
@@ -393,7 +425,7 @@
 
             <!--退出按钮-->
             <Button
-
+                android:id="@+id/close_app_but"
                 style="@style/Widget.AppCompat.Button.Borderless"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"

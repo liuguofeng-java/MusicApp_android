@@ -15,6 +15,7 @@
         <attr format="string" name="menu_name"/>
         <attr format="string" name="menu_sub_name"/>
         <attr format="integer" name="menu_msg_num"/>
+        <attr format="integer" name="menu_switch"/>
     </declare-styleable>
 
 </resources>
