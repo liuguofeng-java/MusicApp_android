@@ -17,8 +17,6 @@ import io.music.app.common.util.DarkModeUtils;
 
 public class MainActivity extends BaseActivity {
 
-    @BindView(R.id.but)
-    Button button;
 
     private DemoApi demoApi;
 
@@ -36,11 +34,6 @@ public class MainActivity extends BaseActivity {
         demoApi = HttpServer.createService(DemoApi.class);
     }
 
-
-    @OnClick({R.id.but})
-    void onclick(){
-        showToastBottom("xxxx");
-    }
 
 
     @Override

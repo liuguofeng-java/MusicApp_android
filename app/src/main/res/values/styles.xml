@@ -5,7 +5,7 @@
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:windowBackground">@drawable/shape_splash_bg</item>
+        <item name="android:windowBackground">@drawable/layer_list_splash_bg</item>
     </style>
 
     <!-- 默认Activity跳转动画 -->

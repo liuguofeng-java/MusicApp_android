@@ -6,16 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.appcompat.app.AppCompatDelegate;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import io.music.app.R;
 import io.music.app.base.BaseFragment;
-import io.music.app.common.util.DarkModeUtils;
 import io.music.app.entity.EventEntity;
 
 /**

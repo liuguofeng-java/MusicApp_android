@@ -2,21 +2,31 @@
 <resources>
     <!--阴影-->
     <declare-styleable name="ShadowRelativeLayout">
-        <attr format="color" name="shadow_color"/>
-        <attr format="dimension" name="shadow_radius"/>
-        <attr format="dimension" name="shadow_blur"/>
-        <attr format="dimension" name="shadow_dx"/>
-        <attr format="dimension" name="shadow_dy"/>
+        <attr name="shadow_color" format="color" />
+        <attr name="shadow_radius" format="dimension" />
+        <attr name="shadow_blur" format="dimension" />
+        <attr name="shadow_dx" format="dimension" />
+        <attr name="shadow_dy" format="dimension" />
     </declare-styleable>
 
     <!--侧边栏导航中菜单-->
     <declare-styleable name="NavMenuLinearLayout">
-        <attr format="reference" name="menu_id"/>
-        <attr format="reference" name="menu_icon"/>
-        <attr format="string" name="menu_name"/>
-        <attr format="string" name="menu_sub_name"/>
-        <attr format="integer" name="menu_msg_num"/>
-        <attr format="integer" name="menu_switch"/>
+        <attr name="menu_id" format="reference" />
+        <attr name="menu_icon" format="reference" />
+        <attr name="menu_name" format="string" />
+        <attr name="menu_sub_name" format="string" />
+        <attr name="menu_msg_num" format="integer" />
+        <attr name="menu_switch" format="integer" />
     </declare-styleable>
 
+
+    <!--底部导航菜单-->
+    <declare-styleable name="BottomNavBarItem">
+        <attr name="bar_id" format="reference" />
+        <attr name="bar_icon" format="reference" />
+        <attr name="bar_icon_select" format="reference" />
+        <attr name="bar_is_select" format="boolean" />
+        <attr name="bar_name" format="string" />
+        <attr name="bar_msg" format="boolean" />
+    </declare-styleable>
 </resources>

@@ -7,6 +7,7 @@
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable-v21/ripple_bg.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable-v21/ripple_menu.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable-v23/layer_splash.xml" value="0.1705" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable-v23/vector_home_select.xml" value="0.1535" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable-xxhdpi/profile.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1705" />
@@ -17,6 +18,8 @@
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/ripple_bg.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/ripple_menu.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/scan_qr_code.xml" value="0.1705" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/shape_bar_bg.xml" value="0.1305" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/shape_bar_bg_line.xml" value="0.1305" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/shape_menu_bg.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/shape_nav_vip_bg.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/shape_nav_vip_but_bg.xml" value="0.1705" />
@@ -25,6 +28,22 @@
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/shape_toast_bg.xml" value="0.7333333333333334" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_bang.xml" value="0.1705" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_bar_account.xml" value="0.1305" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_bar_account_select.xml" value="0.1305" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_bar_account_select_color.xml" value="0.1305" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_bar_chat .xml" value="0.1305" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_bar_chat.xml" value="0.1305" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_bar_chat_select.xml" value="0.1305" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_bar_chat_select_color.xml" value="0.1305" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_bar_concern.xml" value="0.1305" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_bar_concern_select.xml" value="0.1305" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_bar_concern_select_color.xml" value="0.1305" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_bar_home.xml" value="0.1305" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_bar_home_select.xml" value="0.1305" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_bar_home_select_color.xml" value="0.1305" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_bar_podcast.xml" value="0.1305" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_bar_podcast_select.xml" value="0.1305" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_bar_podcast_select_color.xml" value="0.1305" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_bulb.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_cloud.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_coupon.xml" value="0.1705" />
@@ -34,6 +53,9 @@
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_forbid.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_game.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_headset.xml" value="0.1705" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_home.xml" value="0.1535" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_home_select.xml" value="0.1535" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_home_select_color.xml" value="0.1535" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_mall.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_moon.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/drawable/vector_nav_profile.xml" value="0.1705" />
@@ -54,6 +76,8 @@
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/layout/activity_left_nav.xml" value="0.17274569402228976" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/layout/activity_splash.xml" value="0.1" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/layout/bottom_nav_bar_item_layout.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/layout/fragment_bottom_nav_bar.xml" value="0.35520833333333335" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/layout/fragment_left_nav.xml" value="0.22" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/layout/fragment_main_menu_left.xml" value="0.35520833333333335" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/layout/left_nav_layout.xml" value="0.3258003766478343" />
@@ -61,6 +85,7 @@
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/layout/menu_linear_layout.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/layout/nav_menu_linear_layout.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/layout/toast_layout.xml" value="0.3541666666666667" />
+        <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/layout/view_bottom_nav_bar_item.xml" value="0.35520833333333335" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1705" />
         <entry key="..\:/Users/liuguofeng/Desktop/MusicApp_android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1705" />
       </map>

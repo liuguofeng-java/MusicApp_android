@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="45dp" />
+            <gradient
+                android:angle="45"
+                android:startColor="#fd3a3e"
+                android:endColor="#fc9d9d"
+                android:type="linear" />
+        </shape>
+    </item>
+    <item
+
+        android:bottom="5dp"
+        android:drawable="@drawable/vector_bar_chat_select_color"
+        android:left="5dp"
+        android:right="5dp"
+        android:top="5dp">
+
+    </item>
+
+</layer-list>

@@ -20,8 +20,7 @@
     <color name="color_menu_line_long_bg">#eeeeee</color>
     <!--菜单隔开线-->
     <color name="color_menu_line_bg">#eeeeee</color>
-    <!--阴影-->
-    <color name="color_shadow">#e2e2e2</color>
+
 
     <!--副标题文字-->
     <color name="color_sub_text">#9a9a9a</color>
@@ -32,5 +31,15 @@
 
     <!--按钮退出颜色-->
     <color name="color_close_text">#E90000</color>
+
+
+    <!--底部导航菜单文字颜色-->
+    <color name="color_bottom_tab_bar_text">#9f9f9f</color>
+    <!--底部导航菜单文字选中颜色-->
+    <color name="color_bottom_tab_bar_select_text">#e6474c</color>
+
+
+    <!--阴影-->
+    <color name="color_shadow">#e2e2e2</color>
 
 </resources>

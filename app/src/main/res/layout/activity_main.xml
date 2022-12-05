@@ -9,18 +9,19 @@
         tools:openDrawer="start">
 
         <!-- 界面主要内容布局区 -->
-        <FrameLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp">
 
-            <Button
-                android:id="@+id/but"
+            <androidx.fragment.app.FragmentContainerView
+                android:background="#2FC5C5"
+                android:id="@+id/bottom_nav_bar"
+                android:name="io.music.app.ui.fragment.BottomNavBarFragment"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="按钮" />
-        </FrameLayout>
+                android:layout_height="100dp"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
 
         <!-- 左侧弹出的内容 -->
         <LinearLayout

@@ -2,10 +2,8 @@ package io.music.app.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.text.SpannableString;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
@@ -91,7 +89,7 @@ public class NavMenuLinearLayout extends LinearLayout {
 
 
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View view = inflater.inflate(R.layout.menu_linear_layout, this, true);
+            View view = inflater.inflate(R.layout.view_menu_linear, this, true);
             ButterKnife.bind(view);
 
             //图标

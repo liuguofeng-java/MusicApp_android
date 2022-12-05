@@ -71,7 +71,7 @@ public class ToastUtil {
     private static void toastProcess(Context context, String messages,int gravity, int xOffset, int yOffset) {
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         assert layoutInflater != null;
-        View view = layoutInflater.inflate(R.layout.toast_layout, null);
+        View view = layoutInflater.inflate(R.layout.view_toast, null);
         TextView text = view.findViewById(R.id.toast_content);
         text.setText(messages); //toast内容
         Toast toast = new Toast(context.getApplicationContext());
