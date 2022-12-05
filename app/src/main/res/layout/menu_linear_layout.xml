@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ripple_bg"
+    android:id="@+id/menu_container"
     android:minHeight="45dp">
 
     <LinearLayout
@@ -65,7 +66,6 @@
             android:layout_width="16dp"
             android:layout_height="16dp"
             android:layout_marginStart="10dp"
-            android:layout_toStartOf="@+id/menu_switch"
             android:background="@drawable/vector_fine_right_arrow"
             android:gravity="center" />
 

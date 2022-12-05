@@ -2,18 +2,27 @@ package io.music.app.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.text.SpannableString;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SwitchCompat;
 
+import org.greenrobot.eventbus.EventBus;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnCheckedChanged;
+import butterknife.OnClick;
 import io.music.app.R;
+import io.music.app.entity.EventEntity;
 
 /**
  * 侧边栏导航中菜单
@@ -22,6 +31,12 @@ import io.music.app.R;
  * @date 2022/11/16 16:59
  **/
 public class NavMenuLinearLayout extends LinearLayout {
+
+    //父控件标识
+    private int menuId;
+
+    @BindView(R.id.menu_container)
+    RelativeLayout menuContainer;
 
     @BindView(R.id.menu_icon)
     View menuIconView;
@@ -40,6 +55,7 @@ public class NavMenuLinearLayout extends LinearLayout {
 
     @BindView(R.id.menu_switch)
     SwitchCompat menuSwitchView;
+
 
     public NavMenuLinearLayout(Context context) {
         super(context);
@@ -60,6 +76,8 @@ public class NavMenuLinearLayout extends LinearLayout {
     private void dealAttrs(Context context, AttributeSet attrs) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.NavMenuLinearLayout);
         if (typedArray != null) {
+            //父控件标识
+            menuId = typedArray.getResourceId(R.styleable.NavMenuLinearLayout_menu_id, 0);
             //图标
             int menuIcon = typedArray.getResourceId(R.styleable.NavMenuLinearLayout_menu_icon, 0);
             //标题
@@ -111,10 +129,37 @@ public class NavMenuLinearLayout extends LinearLayout {
                 rightArrow.setVisibility(View.GONE);
                 menuSwitchView.setChecked(menuSwitch == 1);
             }
-
             typedArray.recycle();
         }
     }
 
+    /**
+     * 点击菜单容器改变开关状态
+     */
+    @OnClick(R.id.menu_container)
+    public void onClick() {
+        if (menuSwitchView.getVisibility() != View.GONE) {
+            boolean clickable = menuSwitchView.isChecked();
+            menuSwitchView.setChecked(!clickable);
+        } else {
+            EventBus.getDefault().post(new EventEntity<Boolean>() {{
+                setId(menuId);
+            }});
+        }
+    }
+
+    /**
+     * 开关改变时
+     *
+     * @param buttonView
+     * @param isChecked
+     */
+    @OnCheckedChanged(R.id.menu_switch)
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        EventBus.getDefault().post(new EventEntity<Boolean>() {{
+            setId(menuId);
+            setData(isChecked);
+        }});
+    }
 
 }

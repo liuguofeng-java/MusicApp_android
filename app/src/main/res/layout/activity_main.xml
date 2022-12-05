@@ -27,15 +27,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:background="@color/color_nav_bg"
             android:orientation="vertical">
+
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/left_nav"
                 android:name="io.music.app.ui.fragment.LeftNavFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
-
-<!--            <include layout="@layout/left_nav_layout" />-->
         </LinearLayout>
 
 

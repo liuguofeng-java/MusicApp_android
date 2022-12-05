@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="20dp"
-    android:layout_marginTop="40dp"
-    android:layout_marginRight="20dp"
+    android:background="@color/color_nav_bg"
     android:duplicateParentState="true"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingTop="40dp"
+    android:paddingRight="20dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -105,7 +107,8 @@
                     android:background="@drawable/shape_nav_vip_but_bg"
                     android:text="@string/vip_but_text"
                     android:textColor="#f8dbdd"
-                    android:textSize="11sp" />
+                    android:textSize="11sp"
+                    tools:ignore="TouchTargetSizeCheck" />
             </RelativeLayout>
 
             <!--消息、云贝-->
@@ -150,12 +153,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="音乐服务" />
+                    android:text="音乐服务"
+                    android:textColor="@color/color_sub_text" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
-                    android:background="@color/color_menu_line_bg" />
+                    android:background="@color/color_menu_line_long_bg" />
 
                 <io.music.app.view.NavMenuLinearLayout
                     android:id="@+id/menu_ticket"
@@ -250,12 +254,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="其他" />
+                    android:text="其他"
+                    android:textColor="@color/color_sub_text" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
-                    android:background="@color/color_menu_line_bg" />
+                    android:background="@color/color_menu_line_long_bg" />
 
                 <io.music.app.view.NavMenuLinearLayout
                     android:id="@+id/menu_setting"
@@ -278,7 +283,8 @@
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_moon"
                     app:menu_name="深色模式"
-                    app:menu_switch="1" />
+                    app:menu_id="@id/menu_dark_model"
+                    app:menu_switch="0" />
 
                 <View
                     android:layout_width="match_parent"

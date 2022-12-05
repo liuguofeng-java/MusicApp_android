@@ -13,6 +13,7 @@ import io.music.app.api.DemoApi;
 import io.music.app.base.BaseActivity;
 import io.music.app.common.network.HttpServer;
 import io.music.app.common.network.observer.BaseObserver;
+import io.music.app.common.util.DarkModeUtils;
 
 public class MainActivity extends BaseActivity {
 
@@ -26,7 +27,11 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //注解获取控件
         ButterKnife.bind(this);
+
+        //初始化深色模式
+        DarkModeUtils.init(this.getApplication());
 
         demoApi = HttpServer.createService(DemoApi.class);
     }

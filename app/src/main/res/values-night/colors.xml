@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
@@ -10,16 +11,16 @@
     <!--弹窗背景-->
     <color name="color_alert_bg">#ffffff</color>
     <!--侧边导航菜单-->
-    <color name="color_nav_bg">#f6f6f6</color>
+    <color name="color_nav_bg">#151515</color>
 
     <!--菜单背景-->
-    <color name="color_menu_bg">#ffffff</color>
+    <color name="color_menu_bg">#2c2c2c</color>
     <!--菜单箭头-->
-    <color name="color_menu_arrow">#2c2c2c</color>
+    <color name="color_menu_arrow">#656565</color>
     <!--菜单隔长的开线-->
-    <color name="color_menu_line_long_bg">#eeeeee</color>
+    <color name="color_menu_line_long_bg">#303030</color>
     <!--菜单隔开线-->
-    <color name="color_menu_line_bg">#eeeeee</color>
+    <color name="color_menu_line_bg">#2c2c2c</color>
     <!--阴影-->
     <color name="color_shadow">#e2e2e2</color>
 
@@ -28,9 +29,12 @@
     <!--灰色文字-->
     <color name="color_gray_text">#D5CACA</color>
     <!--默认文字颜色-->
-    <color name="color_default_text">#293648</color>
+    <color name="color_default_text">#e7e7e7</color>
 
     <!--按钮退出颜色-->
     <color name="color_close_text">#E90000</color>
+
+
+
 
 </resources>
