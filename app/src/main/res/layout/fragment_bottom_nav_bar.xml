@@ -1,72 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/layer_list_bar_bg"
-    android:gravity="center"
-    tools:context=".ui.fragment.BottomNavBarFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <io.music.app.view.BottomNavBarItemLayout
-        android:id="@+id/bar_home"
-        android:layout_width="wrap_content"
+    <data>
+
+        <variable
+            name="viewModel"
+            type="io.music.app.ui.viewmodel.BottomNavBarViewModel" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:background="@drawable/layer_list_bar_bg"
         android:gravity="center"
-        app:bar_icon="@drawable/vector_bar_home"
-        app:bar_icon_select="@drawable/vector_bar_home_select"
-        app:bar_id="@id/bar_home"
-        app:bar_is_select="true"
-        app:bar_name="主页" />
+        tools:context=".ui.fragment.BottomNavBarFragment">
 
-    <io.music.app.view.BottomNavBarItemLayout
-        android:id="@+id/bar_podcast"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        app:bar_icon="@drawable/vector_bar_podcast"
-        app:bar_icon_select="@drawable/vector_bar_podcast_select"
-        app:bar_id="@id/bar_podcast"
-        app:bar_is_select="false"
-        app:bar_name="播客" />
+        <io.music.app.view.BottomNavBarItemLayout
+            android:id="@+id/bar_home"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:bar_icon="@drawable/vector_bar_home"
+            app:bar_icon_select="@drawable/vector_bar_home_select"
+            app:bar_id="@id/bar_home"
+            app:bar_is_select="@{viewModel.bar.bottomNavBarItems.get(0).select}"
+            app:bar_name="主页" />
 
-    <io.music.app.view.BottomNavBarItemLayout
-        android:id="@+id/bar_account"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        app:bar_icon="@drawable/vector_bar_account"
-        app:bar_icon_select="@drawable/vector_bar_account_select"
-        app:bar_id="@id/bar_account"
-        app:bar_is_select="false"
-        app:bar_name="播客" />
+        <io.music.app.view.BottomNavBarItemLayout
+            android:id="@+id/bar_podcast"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:bar_icon="@drawable/vector_bar_podcast"
+            app:bar_icon_select="@drawable/vector_bar_podcast_select"
+            app:bar_id="@id/bar_podcast"
+            app:bar_is_select="@{viewModel.bar.bottomNavBarItems.get(1).select}"
+            app:bar_name="播客" />
 
-    <io.music.app.view.BottomNavBarItemLayout
-        android:id="@+id/bar_concern"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        app:bar_icon="@drawable/vector_bar_concern"
-        app:bar_icon_select="@drawable/vector_bar_concern_select"
-        app:bar_id="@id/bar_concern"
-        app:bar_is_select="false"
-        app:bar_name="播客" />
+        <io.music.app.view.BottomNavBarItemLayout
+            android:id="@+id/bar_account"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:bar_icon="@drawable/vector_bar_account"
+            app:bar_icon_select="@drawable/vector_bar_account_select"
+            app:bar_id="@id/bar_account"
+            app:bar_is_select="@{viewModel.bar.bottomNavBarItems.get(2).select}"
+            app:bar_name="我的" />
 
-    <io.music.app.view.BottomNavBarItemLayout
-        android:id="@+id/bar_conce"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center"
-        app:bar_icon="@drawable/vector_bar_chat"
-        app:bar_icon_select="@drawable/vector_bar_chat_select"
-        app:bar_id="@id/bar_concern"
-        app:bar_is_select="false"
-        app:bar_name="社区" />
+        <io.music.app.view.BottomNavBarItemLayout
+            android:id="@+id/bar_concern"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:bar_icon="@drawable/vector_bar_concern"
+            app:bar_icon_select="@drawable/vector_bar_concern_select"
+            app:bar_id="@id/bar_concern"
+            app:bar_msg="@{viewModel.bar.bottomNavBarItems.get(3).msg}"
+            app:bar_is_select="@{viewModel.bar.bottomNavBarItems.get(3).select}"
+            app:bar_name="关注" />
+
+        <io.music.app.view.BottomNavBarItemLayout
+            android:id="@+id/bar_community"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            app:bar_icon="@drawable/vector_bar_chat"
+            app:bar_icon_select="@drawable/vector_bar_chat_select"
+            app:bar_id="@id/bar_concern"
+            app:bar_is_select="@{viewModel.bar.bottomNavBarItems.get(4).select}"
+            app:bar_name="社区" />
 
 
-</LinearLayout>
+    </LinearLayout>
+</layout>

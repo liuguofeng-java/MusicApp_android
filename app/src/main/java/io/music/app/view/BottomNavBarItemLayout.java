@@ -28,6 +28,12 @@ public class BottomNavBarItemLayout extends LinearLayout {
     private int barIcon;
     //选中的图标
     private int barIconSelect;
+    //菜单名称
+    private String barName;
+    //是否显示消息提示
+    private boolean barMsg;
+    //是否选中
+    private boolean barIsSelect;
 
     //菜单图标
     @BindView(R.id.bar_img)
@@ -65,31 +71,46 @@ public class BottomNavBarItemLayout extends LinearLayout {
             //选中图标
             barIconSelect = typedArray.getResourceId(R.styleable.BottomNavBarItem_bar_icon_select, 0);
             //菜单名称
-            String barName = typedArray.getString(R.styleable.BottomNavBarItem_bar_name);
+            barName = typedArray.getString(R.styleable.BottomNavBarItem_bar_name);
             //消息提示标志
-            boolean barMsg = typedArray.getBoolean(R.styleable.BottomNavBarItem_bar_msg, false);
-            boolean barIsSelect = typedArray.getBoolean(R.styleable.BottomNavBarItem_bar_is_select, false);
+            barMsg = typedArray.getBoolean(R.styleable.BottomNavBarItem_bar_msg, false);
+            barIsSelect = typedArray.getBoolean(R.styleable.BottomNavBarItem_bar_is_select, false);
 
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             View view = inflater.inflate(R.layout.view_bottom_nav_bar_item, this, true);
             ButterKnife.bind(view);
 
             //是否选中
-            if (barIsSelect) {
-                barImgView.setImageDrawable(getResources().getDrawable(barIconSelect));
-                barTextView.setTextColor(getResources().getColor(R.color.color_bottom_tab_bar_select_text));
-            } else {
-                barImgView.setImageDrawable(getResources().getDrawable(barIcon));
-                barTextView.setTextColor(getResources().getColor(R.color.color_bottom_tab_bar_text));
-            }
+            setBarIsSelect(barIsSelect);
             //设置菜单文字
-            barTextView.setText(barName);
+            setBarName(barName);
 
             //是否显示消息提示
-            barMsgView.setVisibility(!barMsg ? View.GONE : View.VISIBLE);
+            setBarMsg(barMsg);
 
             typedArray.recycle();
         }
     }
 
+
+    public void setBarName(String barName) {
+        this.barName = barName;
+        barTextView.setText(barName);
+    }
+
+    public void setBarMsg(boolean barMsg) {
+        this.barMsg = barMsg;
+        barMsgView.setVisibility(!barMsg ? View.GONE : View.VISIBLE);
+    }
+
+    public void setBarIsSelect(boolean barIsSelect) {
+        this.barIsSelect = barIsSelect;
+        if (barIsSelect) {
+            barImgView.setImageDrawable(getResources().getDrawable(barIconSelect));
+            barTextView.setTextColor(getResources().getColor(R.color.color_bottom_tab_bar_select_text));
+        } else {
+            barImgView.setImageDrawable(getResources().getDrawable(barIcon));
+            barTextView.setTextColor(getResources().getColor(R.color.color_bottom_tab_bar_text));
+        }
+    }
 }

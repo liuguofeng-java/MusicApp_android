@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <io.music.app.view.ShadowRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toast_root"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@drawable/shape_toast_bg"
     android:gravity="center"
-    bind:shadow_blur="14dp"
-    bind:shadow_dx="4dp"
-    bind:shadow_dy="4dp"
-    bind:shadow_color="@color/color_shadow"
-    bind:shadow_radius="50dp">
+    app:shadow_blur="14dp"
+    app:shadow_dx="4dp"
+    app:shadow_dy="4dp"
+    app:shadow_color="@color/color_shadow"
+    app:shadow_radius="50dp">
 
     <TextView
         android:id="@+id/toast_content"

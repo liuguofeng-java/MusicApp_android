@@ -26,6 +26,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    //启用DataBinding
+    buildFeatures {
+        dataBinding true
+    }
 }
 
 dependencies {
@@ -51,7 +56,6 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.2.12'
     //rxandroid 线程调度
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
-
     //事件通知
     implementation 'org.greenrobot:eventbus:3.1.1'
 

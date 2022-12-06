@@ -124,6 +124,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:menu_icon="@drawable/vector_email"
+                    app:menu_msg_num="3"
                     app:menu_name="我的消息" />
 
                 <View
