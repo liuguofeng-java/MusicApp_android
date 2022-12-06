@@ -23,13 +23,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         //隐藏状态栏
         StatusBarUtil.setStatusBarColor(this);
 
-        initData();
     }
 
-    /**
-     * 初始化数据
-     */
-    protected abstract void initData();
+
 
     /**
      * 在顶部弹窗Toast

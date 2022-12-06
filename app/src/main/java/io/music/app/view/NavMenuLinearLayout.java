@@ -155,6 +155,7 @@ public class NavMenuLinearLayout extends LinearLayout {
     @OnCheckedChanged(R.id.menu_switch)
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         EventBus.getDefault().post(new EventEntity<Boolean>() {{
+            setServiceId("menu_switch");
             setId(menuId);
             setData(isChecked);
         }});

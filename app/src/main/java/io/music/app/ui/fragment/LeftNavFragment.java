@@ -40,6 +40,7 @@ public class LeftNavFragment extends BaseFragment {
      */
     @Subscribe
     public void onEvent(EventEntity<Boolean> messageEvent) {
+        if(!messageEvent.getServiceId().equals("menu_switch")) return;
         switch (messageEvent.getId()) {
             case R.id.close_app_but://关闭应用程序
                 System.exit(0);
@@ -57,7 +58,6 @@ public class LeftNavFragment extends BaseFragment {
                 showToastTop("该功能还没有!");
                 break;
         }
-
     }
 
     /**

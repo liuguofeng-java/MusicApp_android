@@ -2,10 +2,10 @@ package io.music.app.ui.model;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
+import androidx.databinding.library.baseAdapters.BR;
 
 import java.util.List;
 
-import io.music.app.BR;
 
 /**
  * @author liuguofeng
@@ -25,7 +25,13 @@ public class BottomNavBar extends BaseObservable {
     }
 
     public static class BottomNavBarItem extends BaseObservable {
+        /**
+         * 是否有消息
+         */
         private boolean isMsg;
+        /**
+         * 是否选中
+         */
         private boolean isSelect;
 
         @Bindable

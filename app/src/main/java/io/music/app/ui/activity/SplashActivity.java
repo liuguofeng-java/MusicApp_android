@@ -31,10 +31,9 @@ public class SplashActivity extends BaseActivity {
         StatusBarUtil.setPackUpStatusBar(this);
         //设置状态栏颜色
         StatusBarUtil.setTransparent(this);
-
+        initData();
     }
 
-    @Override
     protected void initData() {
         //3s跳转到主页
         TimerTask task = new TimerTask() {

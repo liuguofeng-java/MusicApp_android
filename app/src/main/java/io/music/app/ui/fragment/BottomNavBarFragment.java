@@ -15,6 +15,8 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -24,6 +26,7 @@ import butterknife.OnClick;
 import io.music.app.R;
 import io.music.app.base.BaseFragment;
 import io.music.app.databinding.FragmentBottomNavBarBinding;
+import io.music.app.entity.EventEntity;
 import io.music.app.ui.model.BottomNavBar;
 import io.music.app.ui.viewmodel.BottomNavBarViewModel;
 import io.music.app.view.BottomNavBarItemLayout;
@@ -45,7 +48,6 @@ public class BottomNavBarFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-//        View inflate = inflater.inflate(R.layout.fragment_bottom_nav_bar, container, false);
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_bottom_nav_bar, container, false);
         View root = binding.getRoot();
         ButterKnife.bind(this, root);
@@ -83,25 +85,27 @@ public class BottomNavBarFragment extends BaseFragment {
     @OnClick({R.id.bar_home, R.id.bar_podcast, R.id.bar_account,
             R.id.bar_concern, R.id.bar_community})
     public void OnClick(View view) {
-
-        //清除菜单选项
+        EventEntity<Integer> eventEntity = new EventEntity<Integer>();
         switch (view.getId()) {
             case R.id.bar_home:
-                clearBar(0);
+                eventEntity.setData(0);
                 break;
             case R.id.bar_podcast:
-                clearBar(1);
+                eventEntity.setData(1);
                 break;
             case R.id.bar_account:
-                clearBar(2);
+                eventEntity.setData(2);
                 break;
             case R.id.bar_concern:
-                clearBar(3);
+                eventEntity.setData(3);
                 break;
             case R.id.bar_community:
-                clearBar(4);
+                eventEntity.setData(4);
                 break;
         }
+        eventEntity.setServiceId("tab_bar");
+        EventBus.getDefault().post(eventEntity);
+        clearBar(eventEntity.getData());
     }
 
     @BindingAdapter("bar_is_select")
@@ -118,7 +122,7 @@ public class BottomNavBarFragment extends BaseFragment {
      * 清除状态
      * @param index 点击下标
      */
-    private void clearBar(int index) {
+    public void clearBar(int index) {
         //当前菜单选择
         BottomNavBar bottomNavBar = binding.getViewModel().getBar().getValue();
         assert bottomNavBar != null;

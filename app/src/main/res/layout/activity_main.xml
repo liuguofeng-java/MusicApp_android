@@ -9,19 +9,28 @@
         tools:openDrawer="start">
 
         <!-- 界面主要内容布局区 -->
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
 
+
+            <!--页面-->
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <!--底部导航栏-->
             <androidx.fragment.app.FragmentContainerView
-                android:background="#2FC5C5"
                 android:id="@+id/bottom_nav_bar"
                 android:name="io.music.app.ui.fragment.BottomNavBarFragment"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_alignParentBottom="true"/>
-        </RelativeLayout>
+                android:background="#2FC5C5" />
+        </LinearLayout>
 
         <!-- 左侧弹出的内容 -->
         <LinearLayout

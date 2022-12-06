@@ -7,6 +7,10 @@ package io.music.app.entity;
  **/
 public class EventEntity<T> {
     /**
+     * 业务id
+     */
+    private String serviceId;
+    /**
      * 事件id
      */
     private int id;
@@ -14,6 +18,14 @@ public class EventEntity<T> {
      * 数据
      */
     private T data;
+
+    public String getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(String serviceId) {
+        this.serviceId = serviceId;
+    }
 
     public int getId() {
         return id;
