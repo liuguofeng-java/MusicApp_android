@@ -2,11 +2,9 @@ package io.music.app.ui.fragment;
 
 import android.os.Bundle;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 
 import androidx.annotation.Nullable;
@@ -19,14 +17,14 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.music.app.R;
 import io.music.app.base.BaseFragment;
+import io.music.app.common.enevt.ServiceEvent;
 import io.music.app.databinding.FragmentBottomNavBarBinding;
-import io.music.app.entity.EventEntity;
+import io.music.app.common.enevt.EventEntity;
 import io.music.app.ui.model.BottomNavBar;
 import io.music.app.ui.viewmodel.BottomNavBarViewModel;
 import io.music.app.view.BottomNavBarItemLayout;
@@ -103,7 +101,7 @@ public class BottomNavBarFragment extends BaseFragment {
                 eventEntity.setData(4);
                 break;
         }
-        eventEntity.setServiceId("tab_bar");
+        eventEntity.setServiceId(ServiceEvent.BOTTOM_TAB_BAR.getCode());
         EventBus.getDefault().post(eventEntity);
         clearBar(eventEntity.getData());
     }
@@ -135,12 +133,5 @@ public class BottomNavBarFragment extends BaseFragment {
 
     }
 
-    /**
-     * 关闭时注销事件
-     */
-    @Override
-    public void onStop() {
-        super.onStop();
-    }
 
 }

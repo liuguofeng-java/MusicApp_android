@@ -20,7 +20,8 @@ import butterknife.ButterKnife;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 import io.music.app.R;
-import io.music.app.entity.EventEntity;
+import io.music.app.common.enevt.EventEntity;
+import io.music.app.common.enevt.ServiceEvent;
 
 /**
  * 侧边栏导航中菜单
@@ -141,6 +142,7 @@ public class NavMenuLinearLayout extends LinearLayout {
             menuSwitchView.setChecked(!clickable);
         } else {
             EventBus.getDefault().post(new EventEntity<Boolean>() {{
+                setServiceId(ServiceEvent.MENU_SWITCH.getCode());
                 setId(menuId);
             }});
         }
@@ -155,7 +157,7 @@ public class NavMenuLinearLayout extends LinearLayout {
     @OnCheckedChanged(R.id.menu_switch)
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         EventBus.getDefault().post(new EventEntity<Boolean>() {{
-            setServiceId("menu_switch");
+            setServiceId(ServiceEvent.MENU_SWITCH.getCode());
             setId(menuId);
             setData(isChecked);
         }});

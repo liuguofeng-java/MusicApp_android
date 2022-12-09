@@ -13,7 +13,8 @@ import org.greenrobot.eventbus.Subscribe;
 import butterknife.ButterKnife;
 import io.music.app.R;
 import io.music.app.base.BaseFragment;
-import io.music.app.entity.EventEntity;
+import io.music.app.common.enevt.EventEntity;
+import io.music.app.common.enevt.ServiceEvent;
 
 /**
  * 侧边栏
@@ -40,18 +41,13 @@ public class LeftNavFragment extends BaseFragment {
      */
     @Subscribe
     public void onEvent(EventEntity<Boolean> messageEvent) {
-        if(!messageEvent.getServiceId().equals("menu_switch")) return;
+        if(!messageEvent.getServiceId().equals(ServiceEvent.MENU_SWITCH.getCode())) return;
         switch (messageEvent.getId()) {
-            case R.id.close_app_but://关闭应用程序
-                System.exit(0);
-                break;
             case R.id.menu_dark_model://深色模式
                 if(messageEvent.getData()){
                     showToastTop("深色模式!");
-                    //DarkModeUtils.applyNightMode(this.getContext());
                 }else{
                     showToastTop("默认模式!");
-                    //DarkModeUtils.applyDayMode(this.getContext());
                 }
                 break;
             default:
@@ -60,12 +56,11 @@ public class LeftNavFragment extends BaseFragment {
         }
     }
 
-    /**
-     * 关闭时注销事件
-     */
     @Override
-    public void onStop() {
-        super.onStop();
+    public void onDestroy() {
+        //解除注册
         EventBus.getDefault().unregister(this);
+        super.onDestroy();
     }
+
 }

@@ -1,7 +1,8 @@
-package io.music.app.entity;
+package io.music.app.common.enevt;
 
 /**
  * 事件传递
+ *
  * @author liuguofeng
  * @date 2022/11/30 20:40
  **/

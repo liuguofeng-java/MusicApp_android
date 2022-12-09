@@ -1,10 +1,8 @@
 package io.music.app.ui.activity;
 
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentContainerView;
 import androidx.viewpager.widget.ViewPager;
 
 import org.greenrobot.eventbus.EventBus;
@@ -17,10 +15,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.music.app.R;
 import io.music.app.adapter.ContentPagerAdapter;
-import io.music.app.api.DemoApi;
 import io.music.app.base.BaseActivity;
-import io.music.app.common.network.HttpServer;
-import io.music.app.entity.EventEntity;
+import io.music.app.common.enevt.EventEntity;
+import io.music.app.common.enevt.ServiceEvent;
 import io.music.app.ui.fragment.BottomNavBarFragment;
 import io.music.app.ui.fragment.PageAccountFragment;
 import io.music.app.ui.fragment.PageCommunityFragment;
@@ -87,16 +84,15 @@ public class MainActivity extends BaseActivity {
      */
     @Subscribe
     public void onEvent(EventEntity<Integer> messageEvent) {
-        if(!messageEvent.getServiceId().equals("tab_bar")) return;
-        viewPager.setCurrentItem(messageEvent.getData());
+        if(!messageEvent.getServiceId().equals(ServiceEvent.BOTTOM_TAB_BAR.getCode())) return;
+        viewPager.setCurrentItem(messageEvent.getData(), false);
     }
 
-    /**
-     * 关闭时注销事件
-     */
     @Override
-    public void onStop() {
-        super.onStop();
+    public void onDestroy() {
+        //解除注册
         EventBus.getDefault().unregister(this);
+        super.onDestroy();
     }
+
 }
