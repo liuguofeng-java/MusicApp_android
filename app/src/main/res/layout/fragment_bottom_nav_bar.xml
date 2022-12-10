@@ -42,8 +42,7 @@
                 android:gravity="center"
                 app:bar_icon="@drawable/vector_bar_home"
                 app:bar_icon_select="@drawable/vector_bar_home_select"
-                app:bar_id="@id/bar_home"
-                app:bar_is_select="@{viewModel.bar.bottomNavBarItems.get(0).select}"
+                bar_is_select="@{viewModel.bar.bottomNavBarItems.get(0).select}"
                 app:bar_name="主页" />
 
             <io.music.app.view.BottomNavBarItemLayout
@@ -54,8 +53,7 @@
                 android:gravity="center"
                 app:bar_icon="@drawable/vector_bar_podcast"
                 app:bar_icon_select="@drawable/vector_bar_podcast_select"
-                app:bar_id="@id/bar_podcast"
-                app:bar_is_select="@{viewModel.bar.bottomNavBarItems.get(1).select}"
+                bar_is_select="@{viewModel.bar.bottomNavBarItems.get(1).select}"
                 app:bar_name="播客" />
 
             <io.music.app.view.BottomNavBarItemLayout
@@ -66,8 +64,7 @@
                 android:gravity="center"
                 app:bar_icon="@drawable/vector_bar_account"
                 app:bar_icon_select="@drawable/vector_bar_account_select"
-                app:bar_id="@id/bar_account"
-                app:bar_is_select="@{viewModel.bar.bottomNavBarItems.get(2).select}"
+                bar_is_select="@{viewModel.bar.bottomNavBarItems.get(2).select}"
                 app:bar_name="我的" />
 
             <io.music.app.view.BottomNavBarItemLayout
@@ -78,9 +75,8 @@
                 android:gravity="center"
                 app:bar_icon="@drawable/vector_bar_concern"
                 app:bar_icon_select="@drawable/vector_bar_concern_select"
-                app:bar_id="@id/bar_concern"
-                app:bar_is_select="@{viewModel.bar.bottomNavBarItems.get(3).select}"
-                app:bar_msg="@{viewModel.bar.bottomNavBarItems.get(3).msg}"
+                bar_is_select="@{viewModel.bar.bottomNavBarItems.get(3).select}"
+                bar_msg="@{viewModel.bar.bottomNavBarItems.get(3).msg}"
                 app:bar_name="关注" />
 
             <io.music.app.view.BottomNavBarItemLayout
@@ -91,8 +87,7 @@
                 android:gravity="center"
                 app:bar_icon="@drawable/vector_bar_chat"
                 app:bar_icon_select="@drawable/vector_bar_chat_select"
-                app:bar_id="@id/bar_concern"
-                app:bar_is_select="@{viewModel.bar.bottomNavBarItems.get(4).select}"
+                bar_is_select="@{viewModel.bar.bottomNavBarItems.get(4).select}"
                 app:bar_name="社区" />
         </LinearLayout>
     </RelativeLayout>

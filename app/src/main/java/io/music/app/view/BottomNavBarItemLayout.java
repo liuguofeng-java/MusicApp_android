@@ -10,6 +10,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.databinding.BindingAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,8 +24,6 @@ import io.music.app.R;
  * @date 2022/12/05 11:34
  **/
 public class BottomNavBarItemLayout extends LinearLayout {
-    //父控件标识
-    private int barId;
     //默认图标
     private int barIcon;
     //选中的图标
@@ -64,8 +64,6 @@ public class BottomNavBarItemLayout extends LinearLayout {
     private void dealAttrs(Context context, AttributeSet attrs) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.BottomNavBarItem);
         if (typedArray != null) {
-            //父控件标识
-            barId = typedArray.getResourceId(R.styleable.BottomNavBarItem_bar_id, 0);
             //图标
             barIcon = typedArray.getResourceId(R.styleable.BottomNavBarItem_bar_icon, 0);
             //选中图标
@@ -81,12 +79,12 @@ public class BottomNavBarItemLayout extends LinearLayout {
             ButterKnife.bind(view);
 
             //是否选中
-            setBarIsSelect(barIsSelect);
+            setBarIsSelect(this, barIsSelect);
             //设置菜单文字
             setBarName(barName);
 
             //是否显示消息提示
-            setBarMsg(barMsg);
+            setBarMsg(this, barMsg);
 
             typedArray.recycle();
         }
@@ -98,19 +96,51 @@ public class BottomNavBarItemLayout extends LinearLayout {
         barTextView.setText(barName);
     }
 
+    @BindingAdapter("bar_msg")
+    public static void setBarMsg(BottomNavBarItemLayout view, boolean barMsg) {
+        view.setBarMsg(barMsg);
+        view.getBarMsgView().setVisibility(!barMsg ? View.GONE : View.VISIBLE);
+    }
+
+    @BindingAdapter("bar_is_select")
+    public static void setBarIsSelect(BottomNavBarItemLayout view, boolean barIsSelect) {
+        view.setBarIsSelect(barIsSelect);
+        ImageView barImgView = view.getBarImgView();
+        TextView barTextView = view.getBarTextView();
+        if (barIsSelect) {
+            barImgView.setImageDrawable(ResourcesCompat.getDrawable(view.getResources(),view.getBarIconSelect(),null));
+            barTextView.setTextColor(view.getResources().getColor(R.color.color_bottom_tab_bar_select_text));
+        } else {
+            barImgView.setImageDrawable(ResourcesCompat.getDrawable(view.getResources(),view.getBarIcon(),null));
+            barTextView.setTextColor(view.getResources().getColor(R.color.color_bottom_tab_bar_text));
+        }
+    }
+
+    public ImageView getBarImgView() {
+        return barImgView;
+    }
+
+    public TextView getBarTextView() {
+        return barTextView;
+    }
+
+    public View getBarMsgView() {
+        return barMsgView;
+    }
+
+    public int getBarIcon() {
+        return barIcon;
+    }
+
+    public int getBarIconSelect() {
+        return barIconSelect;
+    }
+
     public void setBarMsg(boolean barMsg) {
         this.barMsg = barMsg;
-        barMsgView.setVisibility(!barMsg ? View.GONE : View.VISIBLE);
     }
 
     public void setBarIsSelect(boolean barIsSelect) {
         this.barIsSelect = barIsSelect;
-        if (barIsSelect) {
-            barImgView.setImageDrawable(getResources().getDrawable(barIconSelect));
-            barTextView.setTextColor(getResources().getColor(R.color.color_bottom_tab_bar_select_text));
-        } else {
-            barImgView.setImageDrawable(getResources().getDrawable(barIcon));
-            barTextView.setTextColor(getResources().getColor(R.color.color_bottom_tab_bar_text));
-        }
     }
 }

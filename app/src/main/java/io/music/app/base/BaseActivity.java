@@ -1,10 +1,14 @@
 package io.music.app.base;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.View;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import io.music.app.R;
 import io.music.app.common.util.StatusBarUtil;
 import io.music.app.common.util.ToastUtil;
 
@@ -23,6 +27,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         //隐藏状态栏
         StatusBarUtil.setStatusBarColor(this);
 
+        StatusBarUtil.setTextDark(getWindow(),true);
     }
 
 

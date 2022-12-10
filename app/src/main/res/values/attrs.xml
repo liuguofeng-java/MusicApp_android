@@ -22,7 +22,6 @@
 
     <!--底部导航菜单-->
     <declare-styleable name="BottomNavBarItem">
-        <attr name="bar_id" format="reference" />
         <attr name="bar_icon" format="reference" />
         <attr name="bar_icon_select" format="reference" />
         <attr name="bar_is_select" format="boolean" />

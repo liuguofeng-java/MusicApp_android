@@ -16,6 +16,9 @@ import androidx.annotation.ColorInt;
 import androidx.annotation.RequiresApi;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
 /**
  * @author liuguofeng
  * @date 2022/11/14 20:06
@@ -24,6 +27,85 @@ public class StatusBarUtil {
 
     public static final int DEFAULT_STATUS_BAR_ALPHA = 112;
 
+
+    /**
+     * 设置状态栏是否为黑色文字
+     *
+     * @param window 窗口，可用于Activity和全屏Dialog
+     * @param isDark 是否为黑色文字
+     */
+    public static void setTextDark(Window window, boolean isDark) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            View decorView = window.getDecorView();
+            int systemUiVisibility = decorView.getSystemUiVisibility();
+            if (isDark) {
+                decorView.setSystemUiVisibility(systemUiVisibility | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            } else {
+                decorView.setSystemUiVisibility(systemUiVisibility & ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            }
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            switch (OSUtils.getRomType()) {
+                case MIUI:
+                    setMIUIDark(window, isDark);
+                    break;
+                case Flyme:
+                    setFlymeDark(window, isDark);
+                    break;
+                default:
+            }
+        }
+    }
+
+    /**
+     * 设置MIUI系统状态栏是否为黑色文字
+     *
+     * @param window 窗口，仅可用于Activity
+     * @param isDark 是否为黑色文字
+     */
+    private static void setMIUIDark(Window window, boolean isDark) {
+        try {
+            Class<? extends Window> clazz = window.getClass();
+            int darkModeFlag;
+            Class<?> layoutParams = Class.forName("android.view.MiuiWindowManager$LayoutParams");
+            Field field = layoutParams.getField("EXTRA_FLAG_STATUS_BAR_DARK_MODE");
+            darkModeFlag = field.getInt(layoutParams);
+            Method extraFlagField = clazz.getMethod("setExtraFlags", int.class, int.class);
+            extraFlagField.invoke(window, isDark ? darkModeFlag : 0, darkModeFlag);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 设置Flyme系统状态栏是否为黑色文字
+     *
+     * @param window 窗口
+     * @param isDark 是否为黑色文字
+     */
+    private static void setFlymeDark(Window window, boolean isDark) {
+        if (window != null) {
+            try {
+                WindowManager.LayoutParams lp = window.getAttributes();
+                Field darkFlag = WindowManager.LayoutParams.class
+                        .getDeclaredField("MEIZU_FLAG_DARK_STATUS_BAR_ICON");
+                Field meizuFlags = WindowManager.LayoutParams.class
+                        .getDeclaredField("meizuFlags");
+                darkFlag.setAccessible(true);
+                meizuFlags.setAccessible(true);
+                int bit = darkFlag.getInt(null);
+                int value = meizuFlags.getInt(lp);
+                if (isDark) {
+                    value |= bit;
+                } else {
+                    value &= ~bit;
+                }
+                meizuFlags.setInt(lp, value);
+                window.setAttributes(lp);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     /**
      * 设置全屏自动收起任务栏和状态栏

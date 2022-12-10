@@ -38,8 +38,15 @@
     <!--底部导航菜单文字选中颜色-->
     <color name="color_bottom_tab_bar_select_text">#e6474c</color>
 
+    <!--搜索背景-->
+    <color name="color_search_bg">#ffffff</color>
+
+
 
     <!--阴影-->
     <color name="color_shadow">#e2e2e2</color>
+
+    <!--边框-->
+    <color name="color_border">#e2e2e2</color>
 
 </resources>

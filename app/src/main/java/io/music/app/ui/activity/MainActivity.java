@@ -41,14 +41,14 @@ public class MainActivity extends BaseActivity {
 
         //事件
         EventBus.getDefault().register(this);
-        initData();
+        initViewPager();
     }
 
 
     /**
      * 初始化页面
      */
-    protected void initData() {
+    protected void initViewPager() {
         List<Fragment> data = new ArrayList<>();
         data.add(new PageHomeFragment());
         data.add(new PagePodcastFragment());

@@ -106,15 +106,15 @@ public class BottomNavBarFragment extends BaseFragment {
         clearBar(eventEntity.getData());
     }
 
-    @BindingAdapter("bar_is_select")
-    public static void setBarIsSelect(BottomNavBarItemLayout view, boolean isSelect){
-        view.setBarIsSelect(isSelect);
-    }
 
-    @BindingAdapter("bar_msg")
-    public static void setBarMsg(BottomNavBarItemLayout view, boolean isMsg){
-        view.setBarMsg(isMsg);
-    }
+//    public static void setBarIsSelect(BottomNavBarItemLayout view, boolean isSelect){
+//        view.setBarIsSelect(isSelect);
+//    }
+//
+//
+//    public static void setBarMsg(BottomNavBarItemLayout view, boolean isMsg){
+//        view.setBarMsg(isMsg);
+//    }
 
     /**
      * 清除状态
