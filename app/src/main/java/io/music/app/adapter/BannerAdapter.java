@@ -12,6 +12,7 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.android.material.imageview.ShapeableImageView;
 
 import java.util.List;
 
@@ -49,7 +50,7 @@ public class BannerAdapter extends PagerAdapter {
         View view = LayoutInflater.from(context).inflate(R.layout.view_banner_item,container,false);
         BannerVo.Banners banners = list.get(position);
 
-        ImageView bannerImg =  view.findViewById(R.id.banner_img);
+        ShapeableImageView bannerImg =  view.findViewById(R.id.banner_img);
         RequestOptions OPTIONS = new RequestOptions()
                 .placeholder(R.drawable.vector_picture)//图片加载出来前，显示的图片
                 .fallback(R.drawable.vector_picture) //url为空的时候,显示的图片

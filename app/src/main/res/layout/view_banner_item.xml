@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp">
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/banner_img"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="fitXY"
+        app:shapeAppearance="@style/CircleStyle" />
 
     <TextView
         android:id="@+id/banner_title"
@@ -18,9 +21,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:background="#000"
-        android:padding="10dp"
+        android:layout_toStartOf="@+id/banner_img"
+        android:layout_margin="5dp"
+        android:background="@drawable/shape_banner_text_bg"
+        android:padding="5dp"
         android:text="主体"
-        android:textColor="@color/white" />
+        android:textColor="@color/color_default_text"
+        android:textSize="8dp" />
 
 </RelativeLayout>

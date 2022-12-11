@@ -83,7 +83,7 @@ public class BottomNavBarFragment extends BaseFragment {
     @OnClick({R.id.bar_home, R.id.bar_podcast, R.id.bar_account,
             R.id.bar_concern, R.id.bar_community})
     public void OnClick(View view) {
-        EventEntity<Integer> eventEntity = new EventEntity<Integer>();
+        EventEntity<Integer> eventEntity = new EventEntity<>();
         switch (view.getId()) {
             case R.id.bar_home:
                 eventEntity.setData(0);
@@ -101,20 +101,10 @@ public class BottomNavBarFragment extends BaseFragment {
                 eventEntity.setData(4);
                 break;
         }
-        eventEntity.setServiceId(ServiceEvent.BOTTOM_TAB_BAR.getCode());
+        eventEntity.setServiceId(ServiceEvent.BOTTOM_TAB_BAR);
         EventBus.getDefault().post(eventEntity);
         clearBar(eventEntity.getData());
     }
-
-
-//    public static void setBarIsSelect(BottomNavBarItemLayout view, boolean isSelect){
-//        view.setBarIsSelect(isSelect);
-//    }
-//
-//
-//    public static void setBarMsg(BottomNavBarItemLayout view, boolean isMsg){
-//        view.setBarMsg(isMsg);
-//    }
 
     /**
      * 清除状态

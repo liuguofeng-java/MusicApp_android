@@ -14,7 +14,6 @@ import io.music.app.api.vo.BannerVo;
  * @date 2022/12/06 15:18
  **/
 public class PageHome extends BaseObservable {
-
     //轮播图数据
     private List<BannerVo.Banners> banners;
 

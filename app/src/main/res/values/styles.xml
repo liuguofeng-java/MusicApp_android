@@ -8,6 +8,12 @@
         <item name="android:windowBackground">@drawable/layer_list_splash_bg</item>
     </style>
 
+    <!--ShapeableImageView 圆 -->
+    <style name="CircleStyle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+    </style>
+
     <!-- 默认Activity跳转动画 -->
     <style name="default_animation" mce_bogus="1" parent="@android:style/Animation.Activity">
         <item name="android:activityOpenEnterAnimation">@anim/activity_up_in</item>

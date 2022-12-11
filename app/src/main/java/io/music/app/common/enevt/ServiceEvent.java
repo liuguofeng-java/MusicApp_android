@@ -10,7 +10,10 @@ public enum ServiceEvent {
 
     MENU_SWITCH("menu_switch", "菜单开关滑动"),
 
-    BOTTOM_TAB_BAR("bottom_tab_bar", "底部导航点击");
+    BOTTOM_TAB_BAR("bottom_tab_bar", "底部导航点击"),
+
+    SHOW_LEFT_NAV("show_left_nav", "打开侧边菜单")
+    ;
 
     /**
      * 编号

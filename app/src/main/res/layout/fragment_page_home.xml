@@ -15,10 +15,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:gravity="center">
 
             <View
+                android:id="@+id/home_left_menu_but"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginStart="10dp"
@@ -53,12 +54,13 @@
         </LinearLayout>
 
         <ScrollView
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbarThumbVertical="@android:color/transparent">
 
             <io.music.app.view.BannerLayout
+                android:id="@+id/home_banner"
                 network_url="@{viewModel.pageHome.banners}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>

@@ -10,7 +10,7 @@ public class EventEntity<T> {
     /**
      * 业务id
      */
-    private String serviceId;
+    private ServiceEvent serviceId;
     /**
      * 事件id
      */
@@ -20,11 +20,11 @@ public class EventEntity<T> {
      */
     private T data;
 
-    public String getServiceId() {
+    public ServiceEvent getServiceId() {
         return serviceId;
     }
 
-    public void setServiceId(String serviceId) {
+    public void setServiceId(ServiceEvent serviceId) {
         this.serviceId = serviceId;
     }
 

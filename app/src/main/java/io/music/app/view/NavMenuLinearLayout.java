@@ -142,7 +142,7 @@ public class NavMenuLinearLayout extends LinearLayout {
             menuSwitchView.setChecked(!clickable);
         } else {
             EventBus.getDefault().post(new EventEntity<Boolean>() {{
-                setServiceId(ServiceEvent.MENU_SWITCH.getCode());
+                setServiceId(ServiceEvent.MENU_SWITCH);
                 setId(menuId);
             }});
         }
@@ -157,7 +157,7 @@ public class NavMenuLinearLayout extends LinearLayout {
     @OnCheckedChanged(R.id.menu_switch)
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         EventBus.getDefault().post(new EventEntity<Boolean>() {{
-            setServiceId(ServiceEvent.MENU_SWITCH.getCode());
+            setServiceId(ServiceEvent.MENU_SWITCH);
             setId(menuId);
             setData(isChecked);
         }});

@@ -1,7 +1,10 @@
 package io.music.app.ui.activity;
 
 import android.os.Bundle;
+import android.view.Gravity;
 
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
@@ -30,6 +33,9 @@ public class MainActivity extends BaseActivity {
 
     @BindView(R.id.view_pager)
     ViewPager viewPager;
+
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,13 +85,20 @@ public class MainActivity extends BaseActivity {
 
 
     /**
-     * 点击底部菜单切换页面
+     * 接收事件
      * @param messageEvent 事件内容
      */
     @Subscribe
-    public void onEvent(EventEntity<Integer> messageEvent) {
-        if(!messageEvent.getServiceId().equals(ServiceEvent.BOTTOM_TAB_BAR.getCode())) return;
-        viewPager.setCurrentItem(messageEvent.getData(), false);
+    public void onEvent(EventEntity<Object> messageEvent) {
+        switch (messageEvent.getServiceId()){
+            case BOTTOM_TAB_BAR://点击底部菜单切换页面
+                viewPager.setCurrentItem((Integer) messageEvent.getData(), false);
+                break;
+            case SHOW_LEFT_NAV: //打开侧边栏
+                drawerLayout.openDrawer(GravityCompat.START);
+                break;
+        }
+
     }
 
     @Override
